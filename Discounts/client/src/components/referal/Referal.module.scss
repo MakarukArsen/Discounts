@@ -1,0 +1,129 @@
+@use "../../styles/constants.scss";
+
+.referal {
+    background: #1749B3;
+    box-shadow: 0px 4px 24px rgba(213, 216, 221, 0.2);
+    border-radius: 32px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 65px;
+    padding: 40px 80px;
+    margin-top: 20px;
+
+    @media(max-width: 1023px) {
+        padding: 32px;
+    }
+
+    @media(max-width: 665px) {
+        flex-direction: column;
+        padding: 20px;
+        gap: 30px;
+    }
+}
+
+.textBlock {
+    flex: 0 1 473px;
+
+    @media(max-width: 665px) {
+        flex: 0 0 auto;
+    }
+}
+
+.title {
+    font-size: 26px;
+    line-height: 140%;
+    color: constants.$white;
+    margin-bottom: 25px;
+
+    @media(max-width: 767px) {
+        font-size: 22px;
+        margin-bottom: 15px;
+    }
+}
+
+.text {
+    line-height: 150%;
+    color: constants.$white;
+}
+
+.actionBlock {
+    background: #F1F4F8;
+    border-radius: 16px;
+    flex: 0 1 445px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    padding: 27px 10px;
+
+    @media(max-width: 665px) {
+        flex: 1 1 auto;
+        width: 100%;
+    }
+}
+
+.subtitle {
+    font-size: 20px;
+    line-height: 140%;
+    text-align: center;
+    color: constants.$black2;
+
+    @media(max-width: 767px) {
+        font-size: 18px;
+    }
+}
+
+.link {
+    font-size: 20px;
+    line-height: 150%;
+    color: constants.$blue;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    position: relative;
+
+    @media(max-width: 767px) {
+        font-size: 18px;
+        gap: 10px;
+    }
+
+    &__svg {
+        fill: constants.$black2;
+    }
+
+    &::after {
+        content: "";
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 85%;
+        height: 1px;
+        background-color: constants.$blue;
+    }
+
+    &:hover {
+        color: constants.$black2;
+
+        &::after {
+            background-color: constants.$black2;
+        }
+
+        .link__svg {
+            fill: constants.$light-blue;
+        }
+    }
+
+    &:active {
+        color: constants.$grey;
+
+        &::after {
+            background-color: constants.$grey;
+        }
+
+        .link__svg {
+            fill: constants.$grey;
+        }
+    }
+}
