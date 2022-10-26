@@ -1,0 +1,40 @@
+@use "../../../styles/constants.scss";
+
+.selectButtons {
+    display: flex;
+    align-items: center;
+    border: 1px solid constants.$blue;
+    border-radius: 14px;
+    width: 100%;
+    height: 100%;
+}
+
+.button {
+    width: 100%;
+    height: 100%;
+    border: none;
+    background: none;
+    cursor: pointer;
+    font-family: 'Gotham Pro';
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 150%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: constants.$black2;
+
+    &_left {
+        border-radius: 12px 0px 0px 12px;
+    }
+
+    &_right {
+        border-radius: 0px 12px 12px 0px;
+    }
+
+    &_active {
+        color: constants.$white;
+        background-color: constants.$blue;
+    }
+}

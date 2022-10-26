@@ -23,7 +23,7 @@ const Header = () => {
                         </Link>
                         <ul className={classes.menu}>
                             <li>
-                                <DropDown links={["Netflix", "YouTube Premium", "Spotify"]} title={"Subscription"} fill={"#171717"} />
+                                <DropDown links={["netflix", "youtube", "spotify"]} title={"Subscription"} fill={"#171717"} />
                             </li>
                             <li>
                                 <NavLink className={classes.link} to="/">
