@@ -1,0 +1,21 @@
+.faq {
+    width: 100%;
+
+    &__title {
+        text-align: center;
+        margin-bottom: 40px;
+    }
+
+    &__spoilers {
+        display: flex;
+        flex-direction: column;
+        gap: 16px;
+        margin-bottom: 40px;
+    }
+
+    .button {
+        width: 243px;
+        height: 54px;
+        margin: 0 auto;
+    }
+}

@@ -1,0 +1,25 @@
+@use "../../../styles/constants.scss";
+
+.modal {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+
+    &__title {
+
+        font-size: 26px;
+        line-height: 140%;
+        color: constants.$black2;
+    }
+
+    &__buttons {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+
+        .button {
+            flex: 1 1 50%;
+            height: 45px;
+        }
+    }
+}

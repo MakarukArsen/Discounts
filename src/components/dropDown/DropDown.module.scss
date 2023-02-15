@@ -1,0 +1,113 @@
+@use "../../styles/constants.scss";
+
+.dropDown {
+    position: relative;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+
+    .heading {
+        display: flex;
+        align-items: center;
+        gap: 5px;
+
+        .icon__account {
+            width: 35px;
+            height: 35px;
+        }
+
+        &:hover {
+            color: constants.$blue;
+
+            .icon__account {
+                circle {
+                    fill: constants.$blue;
+                }
+
+                path {
+                    fill: constants.$white;
+                }
+            }
+        }
+
+        .title {
+            font-weight: 500;
+            font-size: 16px;
+            line-height: 150%;
+            display: flex;
+            align-items: center;
+        }
+
+        svg {
+            height: 12px;
+            width: 12px;
+        }
+    }
+
+
+    .dropDownList {
+        z-index: 1;
+        position: absolute;
+        top: 100%;
+        left: -50px;
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+        min-width: 100%;
+        height: auto;
+        background-color: constants.$white;
+        padding: 25px;
+        border-radius: 16px;
+        transition: all .5s ease;
+        box-shadow: 0px 20px 48px rgba(177, 177, 177, 0.4);
+
+        .link {
+            white-space: nowrap;
+            display: flex;
+            align-items: center;
+            font-size: 17px;
+            line-height: 150%;
+            font-weight: 500;
+            color: constants.$black2;
+
+            .icon__account {
+                width: 35px;
+                height: 35px;
+            }
+
+            .icon__logOut {
+                width: 35px;
+                height: 35px;
+            }
+
+            &:hover {
+                color: constants.$blue;
+
+                .icon__account {
+                    circle {
+                        fill: constants.$blue;
+                    }
+
+                    path {
+                        fill: constants.$white;
+                    }
+                }
+
+                .icon__logOut {
+                    circle {
+                        fill: constants.$blue;
+                    }
+
+                    path {
+                        fill: constants.$white;
+                    }
+                }
+            }
+
+            &:active {
+                color: constants.$light-blue;
+            }
+        }
+    }
+}

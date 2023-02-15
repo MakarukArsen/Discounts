@@ -1,0 +1,309 @@
+@use "../../styles/constants.scss";
+
+.header {
+    position: fixed;
+    background-color: constants.$white;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1;
+}
+
+.header__body {
+    position: relative;
+    height: 60px;
+    display: flex;
+    align-items: center;
+
+    .desctop {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    .logoBlock {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+
+        .logo {
+            width: 55px;
+            height: 55px;
+        }
+
+        .logoText {
+            font-family: 'Manrope';
+            font-weight: 600;
+            line-height: 130%;
+            color: constants.$black2;
+
+            @media(max-width:484px) {
+                display: none;
+            }
+        }
+    }
+
+    .menu {
+        display: flex;
+        align-items: center;
+        gap: 45px;
+
+        @media(max-width:1023px) {
+            gap: 20px;
+        }
+
+        @media(max-width: 880px) {
+            display: none;
+        }
+
+        li {}
+
+        .link {
+            line-height: 150%;
+            font-weight: 500;
+
+            &:hover {
+                color: constants.$blue;
+            }
+
+            &:active {
+                color: constants.$light-blue;
+            }
+        }
+    }
+
+    .actions {
+        display: flex;
+        align-items: center;
+        gap: 40px;
+
+        @media(max-width:1023px) {
+            gap: 20px;
+        }
+
+        @media(max-width: 880px) {
+            display: none;
+        }
+
+        .contactUs {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+
+            @media(max-width:1023px) {
+                gap: 10px;
+            }
+
+            a {
+                display: flex;
+                align-items: center;
+            }
+
+            .icon {
+                width: 20px;
+                height: 20px;
+                fill: constants.$black;
+
+                &:hover {
+                    fill: constants.$blue;
+                }
+
+                &:active {
+                    fill: constants.$light-blue;
+                }
+            }
+        }
+
+        .account {
+            display: flex;
+            gap: 5px;
+        }
+
+        .button {
+            width: 135px;
+            height: 40px;
+
+            @media(max-width:1023px) {
+                width: 100px;
+            }
+        }
+    }
+}
+
+// mobile version
+
+
+.mobile {
+    position: fixed;
+    top: 60px;
+    left: 0px;
+    width: 100%;
+    height: 100%;
+    background-color: constants.$background;
+    overflow-y: scroll;
+    transform: translateX(100%);
+    transition: all .5s ease;
+
+    &__content {
+        display: flex;
+        flex-direction: column;
+        gap: 65px;
+        padding: 20px 15px 80px 15px;
+    }
+
+    &__menu {
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    &__list {
+        padding: 15px;
+        background-color: constants.$white;
+        box-shadow: 0px 12px 28px rgba(177, 177, 177, 0.2);
+        border-radius: 12px;
+
+        li {
+            svg {}
+
+            .link {
+                display: flex;
+                align-items: center;
+                gap: 15px;
+                padding: 12px 20px;
+                font-size: 17px;
+                line-height: 150%;
+                color: constants.$black;
+            }
+        }
+    }
+
+    &__actions {
+        display: flex;
+        flex-direction: column;
+        gap: 35px;
+    }
+
+    &__authButtons {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 8px;
+
+        .button {
+            width: 100%;
+            height: 43px;
+        }
+    }
+
+    &__contact {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        .icons {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+
+            a {
+                .icon {
+                    width: 32px;
+                    height: 32px;
+                    fill: constants.$blue;
+
+                    &:active {
+                        fill: constants.$light-blue;
+                    }
+                }
+            }
+        }
+
+        .select {
+            width: 50px;
+        }
+    }
+}
+
+.mobile_active {
+    display: block;
+    transform: translateX(0);
+    transition: all .5s ease;
+
+    @media(min-width:881px) {
+        display: none;
+    }
+}
+
+
+.menu__button {
+    @media(min-width: 881px) {
+        display: none;
+    }
+
+    width: 24px;
+    height: 24px;
+    position: relative;
+
+    &::before {
+        content: "";
+        position: absolute;
+        width: 100%;
+        height: 2px;
+        top: 0px;
+        left: 0px;
+        background-color: constants.$black;
+        transition: all ease .5s;
+    }
+
+    span {
+        position: absolute;
+        width: 100%;
+        height: 2px;
+        top: 11px;
+        left: 0px;
+        background-color: constants.$black;
+        transition: all ease .5s;
+    }
+
+    &::after {
+        content: "";
+        position: absolute;
+        width: 100%;
+        height: 2px;
+        bottom: 0px;
+        left: 0px;
+        background-color: constants.$black;
+        transition: all ease .5s;
+    }
+
+    &_active {
+        background-color: constants.$blue;
+        border-radius: 50%;
+        width: 28px;
+        height: 28px;
+
+        &::before {
+            transform: rotate(45deg);
+            top: 13px;
+            width: 60%;
+            left: 20%;
+            background-color: constants.$white;
+        }
+
+        span {
+            width: 0px;
+            top: 13.5px;
+            left: 14px;
+            background-color: constants.$white;
+        }
+
+        &::after {
+            transform: rotate(-45deg);
+            bottom: 13px;
+            width: 60%;
+            left: 20%;
+            background-color: constants.$white;
+        }
+    }
+}
