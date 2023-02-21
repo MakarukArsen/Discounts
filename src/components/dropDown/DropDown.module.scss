@@ -2,7 +2,7 @@
 
 .dropDown {
     position: relative;
-    cursor: pointer;
+
     display: flex;
     align-items: center;
     justify-content: flex-end;
@@ -11,6 +11,7 @@
         display: flex;
         align-items: center;
         gap: 5px;
+        cursor: pointer;
 
         .icon__account {
             width: 35px;
@@ -53,16 +54,16 @@
         left: -50px;
         display: flex;
         flex-direction: column;
-        gap: 20px;
         min-width: 100%;
         height: auto;
         background-color: constants.$white;
-        padding: 25px;
+        padding: 20px;
         border-radius: 16px;
         transition: all .5s ease;
         box-shadow: 0px 20px 48px rgba(177, 177, 177, 0.4);
 
         .link {
+            padding: 10px 0px;
             white-space: nowrap;
             display: flex;
             align-items: center;
@@ -70,6 +71,7 @@
             line-height: 150%;
             font-weight: 500;
             color: constants.$black2;
+            cursor: pointer;
 
             .icon__account {
                 width: 35px;

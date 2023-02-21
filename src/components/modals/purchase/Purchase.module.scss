@@ -1,0 +1,28 @@
+.modal {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+
+    &__heading {
+        .heading__title {
+            font-size: 28px;
+            line-height: 140%;
+            text-align: center;
+        }
+    }
+
+    &__content {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+
+        p {
+            font-size: 18px;
+            line-height: 150%;
+        }
+
+        .button {
+            height: 40px;
+        }
+    }
+}

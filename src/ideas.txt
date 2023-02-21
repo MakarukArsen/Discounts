@@ -1,7 +1,4 @@
-- авторизація
 - firebase
 - about
 - multi language
 - sign in with
-- profile page
-- header profile icon

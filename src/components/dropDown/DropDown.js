@@ -19,7 +19,7 @@ const DropDown = ({ options, defaultValue, fill, icon }) => {
                 <ul className={classes.dropDownList}>
                     {options.map((item) => {
                         return item.type === "link" ? (
-                            <li key={v4()} className={classes.link}>
+                            <li key={v4()}>
                                 <NavLink className={classes.link} to={item.path}>
                                     {item.icon === "account" ? (
                                         <Accout className={classes.icon__account} />

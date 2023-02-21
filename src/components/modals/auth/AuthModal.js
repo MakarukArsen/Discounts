@@ -3,6 +3,7 @@ import Button from "../../UI/button/Button";
 import classes from "./AuthModal.module.scss";
 import Input from "../../UI/input/Input";
 import useInput from "../../../hooks/useInput";
+import { addDoc, collection, doc, setDoc } from "firebase/firestore";
 import {
     createUserWithEmailAndPassword,
     getAuth,
@@ -11,6 +12,8 @@ import {
     signInWithEmailAndPassword,
     updateProfile,
 } from "firebase/auth";
+import { useDispatch } from "react-redux";
+import { db } from "../../../firebase";
 
 const AuthModal = ({ onClose }) => {
     const [modalType, setModalType] = useState("login");
@@ -21,6 +24,7 @@ const AuthModal = ({ onClose }) => {
     const password = useInput("", { isEmpty: true, minLength: 6 });
     const [agreePolitic, setAgreePolitic] = useState(false);
 
+    const dispatch = useDispatch();
     const auth = getAuth();
 
     const handleLogin = async (e) => {
@@ -60,6 +64,15 @@ const AuthModal = ({ onClose }) => {
                 });
                 await updateProfile(auth.currentUser, {
                     displayName: name.value,
+                });
+                await setDoc(doc(db, "users", auth.currentUser.uid), {
+                    name: name.value,
+                    email: email.value,
+                    subscriptions: {
+                        youtube: null,
+                        netflix: null,
+                        spotify: null,
+                    },
                 });
             })
             .catch((error) => {

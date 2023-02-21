@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import classes from "./Header.module.scss";
 import { Link, NavLink } from "react-router-dom";
 import WhatsUp from "../icons/WhatsUp";
@@ -12,27 +12,15 @@ import Support from "../icons/Support";
 import Select from "../UI/select/Select";
 import Modal from "../modals/Modal";
 import AuthModal from "../modals/auth/AuthModal";
-import { getAuth, onAuthStateChanged } from "firebase/auth";
 import LogOutModal from "../modals/logOuthModal/LogOutModal";
-import Accout from "../icons/Account";
+import { useSelector } from "react-redux";
+
 const Header = () => {
     const [menuActive, setMenuActive] = useState(false);
     const [authModalOpen, setAuthModalOpen] = useState(false);
     const [logOutModalOpen, setLogOutModalOpen] = useState(false);
-    const [isLoggedIn, setLoggedIn] = useState(false);
-    const auth = getAuth();
 
-    useEffect(() => {
-        const unsubscribe = onAuthStateChanged(auth, (user) => {
-            if (user && user.emailVerified) {
-                setLoggedIn(true);
-            } else {
-                setLoggedIn(false);
-            }
-        });
-
-        return unsubscribe;
-    }, []);
+    const { name, id } = useSelector((state) => state.user);
 
     return (
         <header className={classes.header}>
@@ -96,15 +84,21 @@ const Header = () => {
                                 fill={"#171717"}
                             />
 
-                            {isLoggedIn ? (
+                            {name ? (
                                 <div className={classes.account}>
                                     <DropDown
                                         icon={"account"}
                                         options={[
-                                            { title: "My profile", type: "link", action: null, icon: "account" },
+                                            {
+                                                title: "My profile",
+                                                type: "link",
+                                                action: "navigate",
+                                                path: `profile/${id}`,
+                                                icon: "account",
+                                            },
                                             { title: "Logout", type: "modal", action: () => setLogOutModalOpen(true), icon: "logout" },
                                         ]}
-                                        defaultValue={auth.currentUser.displayName}
+                                        defaultValue={name}
                                         fill={"#171717"}
                                     />
                                 </div>

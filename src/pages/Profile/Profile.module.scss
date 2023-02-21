@@ -1,0 +1,191 @@
+@use "../../styles/constants.scss";
+
+.profile {
+    .body {
+        display: flex;
+        flex-direction: column;
+        gap: 60px;
+
+        .heading {
+            &__title {
+                font-weight: 700;
+                font-size: 36px;
+                line-height: 140%;
+                text-align: center;
+            }
+        }
+
+        .content {
+            display: flex;
+            flex-direction: column;
+            gap: 60px;
+
+            &__main {
+                display: flex;
+                align-items: flex-start;
+                gap: 45px;
+
+                .main__sidebar {
+                    flex: 0 0 300px;
+                    background: constants.$white;
+                    box-shadow: 0px 12px 28px rgba(177, 177, 177, 0.2);
+                    border-radius: 12px;
+                    padding: 15px;
+
+                    .sidebar__list {
+                        display: flex;
+                        flex-direction: column;
+                        gap: 10px;
+
+                        .li {
+                            display: flex;
+                            align-items: center;
+                            gap: 12px;
+                            border-radius: 8px;
+                            padding: 12px 0px 12px 20px;
+                            cursor: pointer;
+
+                            .icon {
+                                width: 20px;
+                                height: 20px;
+                            }
+                        }
+
+                        .li_active {
+                            display: flex;
+                            align-items: center;
+                            gap: 12px;
+                            background: #F7F7F7;
+                            border-radius: 8px;
+                            padding: 12px 0px 12px 20px;
+                            cursor: pointer;
+
+                            .icon {
+                                width: 20px;
+                                height: 20px;
+
+                                path {
+                                    fill: constants.$blue;
+                                }
+                            }
+                        }
+
+
+                    }
+                }
+
+                .main__accountInfo {
+                    display: flex;
+                    flex-direction: column;
+                    gap: 40px;
+                    flex: 1 1 auto;
+                    background: #FFFFFF;
+                    box-shadow: 0px 12px 28px rgba(244, 245, 245, 0.2);
+                    border-radius: 32px;
+                    padding: 40px;
+
+                    .accountInfo__heading {
+                        .accountInfo__title {
+                            font-size: 24px;
+                            line-height: 140%;
+                            font-weight: 700;
+                        }
+                    }
+
+                    .accountInfo__body {
+                        .accountInfo__form {
+                            display: flex;
+                            flex-direction: column;
+                            gap: 30px;
+
+                            .inputBlock {
+                                display: flex;
+                                flex-direction: column;
+                                gap: 10px;
+
+                                .inputBlock__title {
+                                    font-weight: 400;
+                                    font-size: 15px;
+                                    line-height: 130%;
+                                    letter-spacing: 0.01em;
+                                }
+
+                                .inputBlock__input {
+                                    display: flex;
+                                }
+
+                                .inputBlock__error {}
+                            }
+
+                            .button {
+                                margin-top: 10px;
+                                height: 50px;
+                            }
+                        }
+                    }
+                }
+
+                .main__subscriptions {
+                    flex: 1 1 auto;
+                    display: flex;
+                    flex-direction: column;
+                    gap: 20px;
+
+                    .subscription {
+                        box-shadow: 0px 12px 28px rgba(244, 245, 245, 0.2);
+
+                        &__heading {
+                            border-radius: 32px 32px 0px 0px;
+                        }
+
+                        &__title {
+                            color: constants.$white;
+                            padding: 40px;
+                        }
+
+                        &__content {
+                            padding: 40px;
+                            background-color: constants.$white;
+                            border-radius: 0px 0px 32px 32px;
+                            display: flex;
+                            flex-direction: column;
+                            gap: 25px;
+                        }
+
+                        &__info {
+                            font-size: 18px;
+                            line-height: 140%;
+                            color: #232323;
+                        }
+
+                        &__actions {}
+
+                        &__link {
+                            font-size: 18px;
+                            line-height: 130%;
+                            color: constants.$black;
+
+                            &:hover {
+                                text-decoration: underline;
+                            }
+                        }
+                    }
+
+                    .youtube .subscription__heading {
+                        background-color: #FE0000;
+                    }
+
+                    .netflix .subscription__heading {
+                        background-color: constants.$black2;
+                    }
+
+                    .spotify .subscription__heading {
+                        background-color: #1ED760;
+                    }
+                }
+            }
+
+            &__referal {}
+        }
+    }
+}

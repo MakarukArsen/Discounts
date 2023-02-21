@@ -5,7 +5,7 @@ import TariffCard from "./TariffCard";
 import classes from "./TariffCard.module.scss";
 import { v4 } from "uuid";
 
-const TariffCards = () => {
+const TariffCards = ({ openModal }) => {
     const [appInfo, setAppInfo] = useState([]);
     const pageId = useParams();
 
@@ -29,7 +29,7 @@ const TariffCards = () => {
     return (
         <div className={classes.tariffCards}>
             {appInfo.map((card) => {
-                return <TariffCard key={v4()} tariff={card} />;
+                return <TariffCard openModal={openModal} key={v4()} tariff={card} />;
             })}
         </div>
     );

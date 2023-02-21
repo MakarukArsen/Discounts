@@ -109,7 +109,7 @@ export const faqData = {
         },
         {
             title: "Can I change my Netflix account email and password after purchase?",
-            text: "Payment options we currently have: PayPal, Bitcoin.",
+            text: "Payment options we currently have: PayPal, Bitcoin. Payment options we currently have: PayPal, Bitcoin. Payment options we currently have: PayPal, Bitcoin. Payment options we currently have: PayPal, Bitcoin.",
         },
     ],
 };
