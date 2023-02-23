@@ -25,6 +25,17 @@
     &__box {
         flex: 0 1 50%;
         display: flex;
+        animation: box .8s linear;
+
+        @keyframes box {
+            0% {
+                transform: scale(.9);
+            }
+
+            100% {
+                transform: scale(1);
+            }
+        }
 
         &_blue {
             @media(max-width:630px) {
@@ -110,10 +121,6 @@
     }
 }
 
-
-
-
-
 .subscription {
     &__title {
         text-align: center;
@@ -136,7 +143,32 @@
         box-shadow: 0px 4px 24px rgba(213, 216, 221, 0.2);
         border-radius: 32px;
         flex: 0 0 342px;
-        max-width: 100%;
+        overflow: hidden;
+
+        &:nth-child(1) {
+            animation: subscription .8s linear both;
+        }
+
+        &:nth-child(2) {
+            animation: subscription .8s linear .8s both;
+        }
+
+        &:nth-child(3) {
+            animation: subscription .8s linear 1.6s both;
+        }
+
+
+        @keyframes subscription {
+            0% {
+                transform: translateX(-20%);
+                opacity: 0;
+            }
+
+            100% {
+                transform: translateX(0%);
+                opacity: 1;
+            }
+        }
 
         @media(max-width:767px) {
             flex: 0 0 200px;
@@ -190,7 +222,6 @@
         }
 
         &__button {
-            margin-top: 15px;
             width: 148px;
             height: 54px;
 
@@ -221,7 +252,6 @@
                 }
             }
         }
-
     }
 }
 
@@ -235,6 +265,7 @@
         display: flex;
         justify-content: space-between;
         gap: 15px;
+        overflow: hidden;
 
         @media(max-width: 767px) {
             flex-direction: column;
@@ -250,6 +281,30 @@
         background-color: constants.$white;
         padding: 120px 40px 40px 40px;
         position: relative;
+
+        &:nth-child(1) {
+            animation: card 1s linear both;
+        }
+
+        &:nth-child(2) {
+            animation: card 1s linear 1s both;
+        }
+
+        &:nth-child(3) {
+            animation: card 1s linear 2s both;
+        }
+
+        @keyframes card {
+            0% {
+                opacity: 0;
+                transform: translateY(100%);
+            }
+
+            100% {
+                opacity: 1;
+                transform: translateY(0px);
+            }
+        }
 
         @media(max-width:1023px) {
             padding: 40px;
