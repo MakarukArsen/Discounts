@@ -83,47 +83,17 @@
     align-items: center;
     gap: 20px;
     position: relative;
+    text-decoration: underline;
 
     @media(max-width: 767px) {
         font-size: 18px;
-        gap: 10px;
-    }
-
-    &__svg {
-        fill: constants.$black2;
-    }
-
-    &::after {
-        content: "";
-        position: absolute;
-        bottom: 0;
-        left: 0;
-        width: 85%;
-        height: 1px;
-        background-color: constants.$blue;
     }
 
     &:hover {
         color: constants.$black2;
-
-        &::after {
-            background-color: constants.$black2;
-        }
-
-        .link__svg {
-            fill: constants.$light-blue;
-        }
     }
 
     &:active {
         color: constants.$grey;
-
-        &::after {
-            background-color: constants.$grey;
-        }
-
-        .link__svg {
-            fill: constants.$grey;
-        }
     }
 }

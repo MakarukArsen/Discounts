@@ -21,17 +21,17 @@ const Footer = () => {
                             <h3 className={classes.menu__title}>Subscriptions</h3>
                             <ul className={classes.menu__list}>
                                 <li>
-                                    <Link className={classes.menu__link} to="/">
+                                    <Link className={classes.menu__link} to="/subscription/netflix">
                                         Netflix
                                     </Link>
                                 </li>
                                 <li>
-                                    <Link className={classes.menu__link} to="/">
+                                    <Link className={classes.menu__link} to="/subscription/youtube">
                                         YouTube Premium
                                     </Link>
                                 </li>
                                 <li>
-                                    <Link className={classes.menu__link} to="/">
+                                    <Link className={classes.menu__link} to="/subscription/spotify">
                                         Spotify
                                     </Link>
                                 </li>
@@ -46,7 +46,7 @@ const Footer = () => {
                                     </Link>
                                 </li>
                                 <li>
-                                    <Link className={classes.menu__link} to="/">
+                                    <Link className={classes.menu__link} to="/faq">
                                         FAQ
                                     </Link>
                                 </li>
@@ -59,12 +59,12 @@ const Footer = () => {
                         </div>
                         <div className={classes.menu__column + " " + classes.menu__column_contacts}>
                             <div className={classes.menu__contacts}>
-                                <a href="*">
+                                <Link>
                                     <WhatsUp />
-                                </a>
-                                <a href="*">
+                                </Link>
+                                <Link>
                                     <Telegram />
-                                </a>
+                                </Link>
                             </div>
                             <DropDown
                                 options={[

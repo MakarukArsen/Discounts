@@ -50,7 +50,9 @@
                 color: constants.$black2;
             }
 
-            .form__input {}
+            .form__input {
+                display: flex;
+            }
 
             .label {
                 display: flex;

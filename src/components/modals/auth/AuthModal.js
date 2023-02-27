@@ -110,16 +110,17 @@ const AuthModal = ({ onClose }) => {
                     <form className={classes.form}>
                         <div className={classes.form__inputBlock}>
                             <p className={classes.form__text}>Email Address</p>
-                            <Input
-                                value={email.value}
-                                onChange={(e) => {
-                                    email.onChange(e);
-                                    setAuthError("");
-                                }}
-                                className={classes.form__input}
-                                onBlur={() => email.onBlur()}
-                                placeholder="Enter your e-mail"
-                            />
+                            <div className={classes.form__input}>
+                                <Input
+                                    value={email.value}
+                                    onChange={(e) => {
+                                        email.onChange(e);
+                                        setAuthError("");
+                                    }}
+                                    onBlur={() => email.onBlur()}
+                                    placeholder="Enter your e-mail"
+                                />
+                            </div>
                             <p className={classes.error}>
                                 {email.isDirty && email.isEmpty
                                     ? "Поле не може бути пустим"
@@ -130,16 +131,18 @@ const AuthModal = ({ onClose }) => {
                         </div>
                         <div className={classes.form__inputBlock}>
                             <p className={classes.input__text}>Password</p>
-                            <Input
-                                value={password.value}
-                                onChange={(e) => {
-                                    password.onChange(e);
-                                    setAuthError("");
-                                }}
-                                onBlur={() => password.onBlur()}
-                                className={classes.form__input}
-                                placeholder="******"
-                            />
+                            <div className={classes.form__input}>
+                                <Input
+                                    value={password.value}
+                                    onChange={(e) => {
+                                        password.onChange(e);
+                                        setAuthError("");
+                                    }}
+                                    onBlur={() => password.onBlur()}
+                                    className={classes.form__input}
+                                    placeholder="******"
+                                />
+                            </div>
                             <p className={classes.error}>
                                 {password.isDirty && password.isEmpty
                                     ? "Поле не може бути пустим"
@@ -193,30 +196,34 @@ const AuthModal = ({ onClose }) => {
                     <form className={classes.form}>
                         <div className={classes.form__inputBlock}>
                             <p className={classes.form__text}>User names</p>
-                            <Input
-                                value={name.value}
-                                onChange={(e) => {
-                                    name.onChange(e);
-                                    setAuthError("");
-                                }}
-                                onBlur={() => name.onBlur()}
-                                className={classes.form__input}
-                                placeholder="Enter your name"
-                            />
+                            <div className={classes.form__input}>
+                                <Input
+                                    value={name.value}
+                                    onChange={(e) => {
+                                        name.onChange(e);
+                                        setAuthError("");
+                                    }}
+                                    onBlur={() => name.onBlur()}
+                                    className={classes.form__input}
+                                    placeholder="Enter your name"
+                                />
+                            </div>
                             <p className={classes.error}>{name.isDirty && name.isEmpty ? "Поле не може бути пустим" : null}</p>
                         </div>
                         <div className={classes.form__inputBlock}>
                             <p className={classes.form__text}>Email Address</p>
-                            <Input
-                                value={email.value}
-                                onChange={(e) => {
-                                    email.onChange(e);
-                                    setAuthError("");
-                                }}
-                                onBlur={() => email.onBlur()}
-                                className={classes.form__input}
-                                placeholder="Enter your e-mail"
-                            />
+                            <div className={classes.form__input}>
+                                <Input
+                                    value={email.value}
+                                    onChange={(e) => {
+                                        email.onChange(e);
+                                        setAuthError("");
+                                    }}
+                                    onBlur={() => email.onBlur()}
+                                    className={classes.form__input}
+                                    placeholder="Enter your e-mail"
+                                />
+                            </div>
                             <p className={classes.error}>
                                 {email.isDirty && email.isEmpty
                                     ? "Поле не може бути пустим"
@@ -227,16 +234,18 @@ const AuthModal = ({ onClose }) => {
                         </div>
                         <div className={classes.form__inputBlock}>
                             <p className={classes.input__text}>Password</p>
-                            <Input
-                                value={password.value}
-                                onChange={(e) => {
-                                    password.onChange(e);
-                                    setAuthError("");
-                                }}
-                                onBlur={() => password.onBlur()}
-                                className={classes.form__input}
-                                placeholder="******"
-                            />
+                            <div className={classes.form__input}>
+                                <Input
+                                    value={password.value}
+                                    onChange={(e) => {
+                                        password.onChange(e);
+                                        setAuthError("");
+                                    }}
+                                    onBlur={() => password.onBlur()}
+                                    className={classes.form__input}
+                                    placeholder="******"
+                                />
+                            </div>
                             <p className={classes.error}>
                                 {" "}
                                 {password.isDirty && password.isEmpty
@@ -310,16 +319,18 @@ const AuthModal = ({ onClose }) => {
                     </div>
                     <div className={classes.form__inputBlock}>
                         <p className={classes.form__text}>Email Address</p>
-                        <Input
-                            value={email.value}
-                            onChange={(e) => {
-                                email.onChange(e);
-                                setAuthError("");
-                            }}
-                            onBlur={() => email.onBlur()}
-                            className={classes.form__input}
-                            placeholder="Enter your e-mail"
-                        />
+                        <div className={classes.form__input}>
+                            <Input
+                                value={email.value}
+                                onChange={(e) => {
+                                    email.onChange(e);
+                                    setAuthError("");
+                                }}
+                                onBlur={() => email.onBlur()}
+                                className={classes.form__input}
+                                placeholder="Enter your e-mail"
+                            />
+                        </div>
                         <p className={classes.error}>
                             {email.isDirty && email.isEmpty
                                 ? "Поле не може бути пустим"

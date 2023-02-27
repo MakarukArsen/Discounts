@@ -1,5 +1,5 @@
 import React from "react";
-import Link from "../icons/Link";
+import { Link } from "react-router-dom";
 import classes from "./Referal.module.scss";
 
 const Referal = () => {
@@ -11,10 +11,9 @@ const Referal = () => {
             </div>
             <div className={classes.actionBlock}>
                 <p className={classes.subtitle}>Click on the link</p>
-                <a href="*" className={classes.link}>
+                <Link to={"/"} className={classes.link}>
                     Discounts On Services
-                    <Link className={classes.link__svg} />
-                </a>
+                </Link>
             </div>
         </div>
     );

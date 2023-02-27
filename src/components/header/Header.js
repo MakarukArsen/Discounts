@@ -67,12 +67,12 @@ const Header = () => {
                         </ul>
                         <div className={classes.actions}>
                             <div className={classes.contactUs}>
-                                <a href="*">
+                                <Link>
                                     <WhatsUp className={classes.icon} />
-                                </a>
-                                <a href="*">
+                                </Link>
+                                <Link>
                                     <Telegram className={classes.icon} />
-                                </a>
+                                </Link>
                             </div>
 
                             <DropDown

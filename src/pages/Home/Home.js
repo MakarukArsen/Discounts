@@ -4,6 +4,7 @@ import Referal from "../../components/referal/Referal";
 import { faqData } from "../../constants";
 import Button from "../../components/UI/button/Button";
 import classes from "./Home.module.scss";
+import { Link } from "react-router-dom";
 
 const Home = () => {
     return (
@@ -39,26 +40,13 @@ const Home = () => {
                                         check and set also.
                                     </p>
                                     <div className={classes.application__button}>
-                                        <Button color={"blue"}>Learn more</Button>
+                                        <Button color={"blue"}>
+                                            <Link to={"/subscription/netflix"}>Learn more</Link>
+                                        </Button>
                                     </div>
                                 </div>
                                 <div className={classes.application__imageBlock}>
                                     <img src={require("../../img/netflix.png")} alt="" />
-                                </div>
-                            </div>
-                            <div className={classes.subscription__application + " " + classes.application}>
-                                <div className={classes.application__textBlock}>
-                                    <h3 className={classes.application__title}>Spotify Premium</h3>
-                                    <p className={classes.application__text}>
-                                        The constant contributes to the task of the same and thus the intended features and the set relation to the
-                                        check and set also.
-                                    </p>
-                                    <div className={classes.application__button}>
-                                        <Button color={"blue"}>Learn more</Button>
-                                    </div>
-                                </div>
-                                <div className={classes.application__imageBlock}>
-                                    <img src={require("../../img/spotify.png")} alt="" />
                                 </div>
                             </div>
                             <div className={classes.subscription__application + " " + classes.application}>
@@ -69,11 +57,30 @@ const Home = () => {
                                         check and set also.
                                     </p>
                                     <div className={classes.application__button}>
-                                        <Button color={"blue"}>Learn more</Button>
+                                        <Button color={"blue"}>
+                                            <Link to={"/subscription/youtube"}>Learn more</Link>
+                                        </Button>
                                     </div>
                                 </div>
                                 <div className={classes.application__imageBlock}>
                                     <img src={require("../../img/youtube.png")} alt="" />
+                                </div>
+                            </div>
+                            <div className={classes.subscription__application + " " + classes.application}>
+                                <div className={classes.application__textBlock}>
+                                    <h3 className={classes.application__title}>Spotify Premium</h3>
+                                    <p className={classes.application__text}>
+                                        The constant contributes to the task of the same and thus the intended features and the set relation to the
+                                        check and set also.
+                                    </p>
+                                    <div className={classes.application__button}>
+                                        <Button color={"blue"}>
+                                            <Link to={"/subscription/spotify"}>Learn more</Link>
+                                        </Button>
+                                    </div>
+                                </div>
+                                <div className={classes.application__imageBlock}>
+                                    <img src={require("../../img/spotify.png")} alt="" />
                                 </div>
                             </div>
                         </div>
